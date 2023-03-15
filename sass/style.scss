@@ -1,0 +1,191 @@
+@use "./animations";
+@use "./colors" as color;
+@use "./fonts" as font;
+@use "./normalize";
+
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html,
+body {
+	height: 100%;
+	font-family: font.$dm-sans;
+}
+
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+}
+
+a {
+	text-decoration: none;
+}
+
+img {
+	height: auto;
+}
+
+input,
+button,
+textarea,
+select {
+	font-family: inherit;
+}
+
+button {
+	border: none;
+	cursor: pointer;
+}
+
+textarea {
+	resize: vertical;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.main-content {
+	margin-top: 16rem;
+	overflow-x: hidden;
+}
+
+.coming-soon {
+	&__title {
+		h1 {
+			font-size: 6rem;
+			color: color.$black;
+		}
+
+		p {
+			position: relative;
+			top: 5rem;
+			left: 0.3rem;
+			font-size: font.$h4;
+			font-weight: bold;
+			color: color.$gray;
+		}
+
+		img {
+			position: relative;
+			left: 23.5rem;
+			bottom: 12rem;
+			width: 6.5rem;
+			height: 6.5rem;
+			animation: wave ease 2s infinite;
+		}
+	}
+
+	&__countdown {
+		h2 {
+			position: relative;
+			top: 1.5rem;
+			font-size: font.$h2;
+			color: color.$gray;
+		}
+
+		p {
+			font-size: font.$p;
+			color: color.$gray;
+
+			span {
+				font-size: font.$h0;
+				color: color.$black;
+			}
+		}
+	}
+}
+
+.img-box {
+	margin: auto;
+}
+
+footer {
+	display: flex;
+	align-items: center;
+	margin-top: auto;
+
+	ul {
+		display: flex;
+		align-items: center;
+		list-style-type: none;
+
+		li {
+			margin-right: 2rem;
+
+			a {
+				text-decoration: none;
+				display: inline-block;
+				position: relative;
+				width: 5.6rem;
+				height: 5.6rem;
+				background-color: color.$light-gray;
+				border-radius: 100%;
+				transition: background-color 0.3s;
+
+				&:hover {
+					background-color: color.$black;
+
+					img {
+						filter: invert(100%);
+					}
+				}
+
+				img {
+					width: 2rem;
+					height: 2rem;
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+					transition: filter 0.3s;
+				}
+			}
+		}
+	}
+
+	span {
+		margin-bottom: 1.2rem;
+		font-size: font.$p;
+		color: color.$gray;
+	}
+}
+
+#preloader {
+	background: #000 url("./img/loader.gif") no-repeat center center;
+	background-size: 15%;
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	z-index: 100;
+}
+
+::-webkit-scrollbar {
+	width: 0.8rem;
+}
+
+::-webkit-scrollbar-track {
+	background: #d8d8d8;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #252926;
+}
+
+@media (max-width: 768px) {
+	.main-content {
+		margin-top: auto;
+	}
+}
+
+@media (min-width: 768px){
+	body {
+		overflow: hidden;
+	}
+}
