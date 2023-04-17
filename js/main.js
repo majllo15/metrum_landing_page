@@ -3,7 +3,7 @@ const
     hoursSpan = document.querySelector('.hours'),
     minutesSpan = document.querySelector('.minutes'),
     secondsSpan = document.querySelector('.seconds'),
-    startDate = new Date("Mar 30, 2023 20:00:00").getTime();
+    startDate = new Date("June 30, 2023 20:00:00").getTime();
 
 
 const countdown = (params) => {
